@@ -208,6 +208,26 @@ print(df)
 
 ---
 
+### ¿Cómo buscar un dato de un DataFrame de pandas por su índice?
+**Explicación:** Se usa `.loc[indice]` para acceder directamente.
+
+**Importancia:** Permite obtener una fila por su clave única.
+
+**Ejemplo aplicativo:**
+```python
+import pandas as pd
+
+df = pd.DataFrame({"id": [20230901], "valor": [100]})
+df.set_index("id", inplace=True)
+registro = df.loc[20230901]
+print(registro)
+# Salida esperada:
+# valor    100
+# Name: 20230901, dtype: int64
+```
+
+---
+
 ### ¿Esos índices vienen solos o uno lo puede definir o cambiar?
 **Explicación:** Se genera por defecto, pero puede personalizarse.
 
@@ -226,26 +246,6 @@ print(df)
 # Int64Index([1], dtype='int64', name='id_transaccion')
 #    id_transaccion  valor
 # 0               1    100
-```
-
----
-
-### ¿Cómo buscar un dato de un DataFrame de pandas por su índice?
-**Explicación:** Se usa `.loc[indice]` para acceder directamente.
-
-**Importancia:** Permite obtener una fila por su clave única.
-
-**Ejemplo aplicativo:**
-```python
-import pandas as pd
-
-df = pd.DataFrame({"id": [20230901], "valor": [100]})
-df.set_index("id", inplace=True)
-registro = df.loc[20230901]
-print(registro)
-# Salida esperada:
-# valor    100
-# Name: 20230901, dtype: int64
 ```
 
 ---

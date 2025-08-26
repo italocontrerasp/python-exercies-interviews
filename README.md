@@ -337,3 +337,33 @@ df.iloc[[0, 2], [1, 2]] #Obtener filas 0, 2 y columnas 1 (monto) y 2 (ciudad)
 # 2    150  Cusco
 
 ```
+
+---
+
+### ¿Que es  `__init__`?
+**Explicación:** Es el constructor de una clase. Se llama automáticamente cuando creas una instancia de la clase. Sirve para inicializar atributos (variables internas) del objeto.
+
+**Importancia:** Define los parámetros de entrada cuando creas objetos que representan conexiones, pipelines, transformaciones o configuraciones.
+
+
+**Ejemplo aplicativo:**
+```python
+class ConexionBD:
+    def __init__(self, host, puerto, usuario, base_datos):
+        self.host = host
+        self.puerto = puerto
+        self.usuario = usuario
+        self.base_datos = base_datos
+
+    def conectar(self):
+        print(f"🔗 Conectando a {self.base_datos} en {self.host}:{self.puerto} con usuario {self.usuario}")
+
+conexion = ConexionBD("localhost", 5432, "admin", "ventas_db")
+conexion.conectar()
+
+
+# Salida esperada:
+# 🔗 Conectando a ventas_db en localhost:5432 con usuario admin
+
+```
+
